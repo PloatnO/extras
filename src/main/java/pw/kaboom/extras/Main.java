@@ -3,6 +3,7 @@ package pw.kaboom.extras;
 import io.papermc.paper.registry.keys.BlockTypeKeys;
 import org.bukkit.WorldCreator;
 import org.bukkit.WorldType;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,6 +22,7 @@ import pw.kaboom.extras.modules.server.ServerTabComplete;
 import pw.kaboom.extras.util.FlatLayers;
 
 import java.io.File;
+import java.util.HashMap;
 
 public final class Main extends JavaPlugin {
     public static Main PLUGIN;
@@ -112,6 +114,16 @@ public final class Main extends JavaPlugin {
                                     .addLayer(BlockTypeKeys.GRASS_BLOCK, 1)
                                     .build()
                     )
+        );
+        this.getServer().createWorld(
+                new WorldCreator("world_void")
+                        .generateStructures(false)
+                        .type(WorldType.FLAT)
+                        .generatorSettings(
+                                new FlatLayers()
+                                        .addLayer(BlockTypeKeys.AIR, 1)
+                                        .build()
+                        )
         );
 
         final Messenger messenger = this.getServer().getMessenger();
