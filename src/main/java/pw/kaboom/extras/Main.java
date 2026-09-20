@@ -3,7 +3,6 @@ package pw.kaboom.extras;
 import io.papermc.paper.registry.keys.BlockTypeKeys;
 import org.bukkit.WorldCreator;
 import org.bukkit.WorldType;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -22,7 +21,6 @@ import pw.kaboom.extras.modules.server.ServerTabComplete;
 import pw.kaboom.extras.util.FlatLayers;
 
 import java.io.File;
-import java.util.HashMap;
 
 public final class Main extends JavaPlugin {
     public static Main PLUGIN;
